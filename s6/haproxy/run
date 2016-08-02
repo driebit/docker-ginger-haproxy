@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sed -i -e 's/BACKEND_SERVER/${BACKEND_SERVER}/g' -e s/BACKEND_PORT/${BACKEND_PORT}/ /etc/haproxy/haproxy.cfg
+
+exec /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -db
